@@ -2,7 +2,7 @@ const {ObjectID} = require('mongodb');
 
 const {mongoose} = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
-const {user} = require('./../server/models/user');
+const {User} = require('./../server/models/user');
 
 // var id = '5afd80a3ec3c0a044acca27d';
 
@@ -31,9 +31,9 @@ const {user} = require('./../server/models/user');
 
 var id = '5afc6b79f1a2898840aea6df';
 
-user.findById(id).then((user) => {
-	if(!user){
+User.findById(id).then((user) => {
+	if(!User){
 		return console.log('ID not found')
 	}
-	console.log(JSON.stringify(user, undefined, 2));
+	console.log(JSON.stringify(User, undefined, 2));
 }).catch((e) => console.log(e));
